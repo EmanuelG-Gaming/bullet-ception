@@ -1,0 +1,6 @@
+name: "bullet-ception" 
+displayName: "Bulletception" 
+author: "Emanuel G"
+description: "Makes every unit in the game have a recursive frag." 
+version: "0.1 Pre-Alpha" 
+minGameVersion: 137
