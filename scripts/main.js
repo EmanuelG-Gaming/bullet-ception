@@ -8,6 +8,8 @@ Events.on(ClientLoadEvent, () => {
       unit.weapons.each(w => {
          let bullets = new Seq();
          
+         w.bullet.despawnHit = true;
+         
          let bul = w.bullet.copy();
          bul.fragBullets = 0; //prevent recursion crash
          w.bullet.fragBullets = 1; //initial bullets
@@ -16,7 +18,7 @@ Events.on(ClientLoadEvent, () => {
          }
          bullets.add(bul);
          
-         w.bullet.fragBullet = bul;
+         w.bullet.fragBullet = bullets.first();
          for (let j = 0; j < bullets.size - 1; j++) {
             let current = bullets.get(j);
             let next = bullets.get(j + 1);
